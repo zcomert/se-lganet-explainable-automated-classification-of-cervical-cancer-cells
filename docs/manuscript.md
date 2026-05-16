@@ -1,4 +1,4 @@
-<!-- Converted from SE_LGANet_V1.docx. Embedded figures are stored in manuscript_media/. -->
+<!-- Converted from SE_LGANet_V1.docx. Embedded figures are stored in ../figures/. -->
 
 Type of the Paper (Article, Review, Communication, etc.)
 
@@ -174,15 +174,15 @@ where$a_i$ denotes the attention weight for the $i-th$ time step; and $X_i$, the
 
 ### 2.5. Proposed Model
 
-The proposed model has been designed with gradual incorporation of incremental improvements. First, CNN (Figure1) is used for feature extraction using its convolutional functions. The model includes five convolutional layers associated with max-pooling layers for input images of size 224x224. Following the flattening operation, a dual-layer configuration of fully connected and dropout units is integrated into the network. The subsequent output layer facilitates multi-class categorization via a softmax activation function. For the training phase, the architecture is optimized using the Adam algorithm, with categorical cross-entropy serving as the primary objective function. This model used 4,879,173 trainable parameters.
+The proposed model has been designed with gradual incorporation of incremental improvements. First, CNN (Figure 1) is used for feature extraction using its convolutional functions. The model includes five convolutional layers associated with max-pooling layers for input images of size 224x224. Following the flattening operation, a dual-layer configuration of fully connected and dropout units is integrated into the network. The subsequent output layer facilitates multi-class categorization via a softmax activation function. For the training phase, the architecture is optimized using the Adam algorithm, with categorical cross-entropy serving as the primary objective function. This model used 4,879,173 trainable parameters.
 
 Subsequently, the model is enhanced with SE blocks. SE blocks emphasize important information in the feature maps and increase the representation power of the model using global average pooling and rescaling operations.
 
-![](manuscript_media/image1.png)
+![Basic CNN model](../figures/image1.png)
 
 **Figure 1.** Basic CNN model.
 
-![](manuscript_media/image2.png)
+![CNN-SE model](../figures/image2.png)
 
 **Figure 2.** CNN-SE model.
 
@@ -190,7 +190,7 @@ The CNN-SE model shown in Figure 2 includes five convolutional layers, each stre
 
 Finally, to optimize the CNN-SE performance, we used local and global features as shown in Figure 3. This allows the model to consider both local and global details, leading to more accurate predictions.
 
-![](manuscript_media/image3.png)
+![Proposed SE-LGANet model](../figures/image3.png)
 
 **Figure 3.** Proposed SE-LGANet model.
 
@@ -214,7 +214,7 @@ To evaluate each experimental trial, confusion matrices are constructed, and con
 
 The computational experiments were conducted within a high-performance environment, leveraging an Intel® Xeon® Gold 6132 CPU and 128 GB of RAM, complemented by an NVIDIA P6000 GPU to facilitate rapid data processing and robust execution. Table 3 summarizes the hyperparameter values used to develop the three models: CNN, CNN-SE, and SE-LGANet.
 
-**Table 2.** This is a table. Tables should be placed in the main text near to the first time they are cited.
+**Table 3.** Hyperparameter settings used for the CNN, CNN-SE, and SE-LGANet models.
 
 | Hyperparameter | CNN | CNN-SE | SE-LGANet |
 | --- | --- | --- | --- |
@@ -240,31 +240,31 @@ The computational experiments were conducted within a high-performance environme
 
 Early Stopping was used during the training of all models, allowing termination before reaching the maximum number of epochs. This approach ensured optimal model performance by preventing overfitting and saving computational resources, allowing the models to achieve higher validation performance, and improved generalization and robustness using different datasets.
 
-| ![](manuscript_media/image4.png) |
+| ![Accuracy and loss curves for CNN](../figures/image4.png) |
 | --- |
 | (a) |
-| ![](manuscript_media/image5.png) |
+| ![Accuracy and loss curves for CNN-SE](../figures/image5.png) |
 | (b) |
-| ![](manuscript_media/image6.png) |
+| ![Accuracy and loss curves for SE-LGANet](../figures/image6.png) |
 | (c) |
 
-Figure 4. Accuracy and loss curves obtained for various models: (a) CNN; (b) CNN-SE; (c) SE-LGANet.
+**Figure 4.** Accuracy and loss curves obtained for various models: (a) CNN; (b) CNN-SE; (c) SE-LGANet.
 
 Figure 4 shows the accuracy and loss curves observed on various models during training and validation. Upon examining the accuracy and loss curves of the CNN, CNN-SE, and SE-LGANet models, it may be noted that training and validation accuracies increased while losses decreased for each model. The CNN model demonstrated reasonable performance with 89% training accuracy, and 87% validation accuracy. The CNN-SE model achieved higher training accuracy of 94% and validation accuracy of 89% due to SE blocks. The SE-LGANet model exhibited the best performance, attaining 93% training accuracy and 91% validation accuracy. This model showed significant improvement in accuracy and overall performance due to the incorporation of both local and global attention mechanisms.
 
-| ![](manuscript_media/image7.png) |
+| ![Confusion matrix for CNN](../figures/image7.png) |
 | --- |
 | (a) |
-| ![](manuscript_media/image8.png) |
+| ![Confusion matrix for CNN-SE](../figures/image8.png) |
 | (b) |
-| ![](manuscript_media/image9.png) |
+| ![Confusion matrix for SE-LGANet](../figures/image9.png) |
 | (c) |
 
-Figure 5. Confusion matrices obtained using various models: (a) CNN; (b) CNN-SE; (c) SE-LGANet.
+**Figure 5.** Confusion matrices obtained using various models: (a) CNN; (b) CNN-SE; (c) SE-LGANet.
 
-The confusion matrices obtained are presented in Figure 5. It is 5 that the SE-LGANet model exhibited the best performance with the minimum class confusion. This model performed better in classifying the Metaplastic, Parabasal and Superficial-Intermediate classes. These results demonstrate that attention mechanisms significantly enhanced the performance of the model.
+The confusion matrices obtained are presented in Figure 5. It can be seen from Figure 5 that the SE-LGANet model exhibited the best performance with the minimum class confusion. This model performed better in classifying the Metaplastic, Parabasal and Superficial-Intermediate classes. These results demonstrate that attention mechanisms significantly enhanced the performance of the model.
 
-Table 4 compared the performance metrics obtained using CNN, CNN-SE, and SE-LGANet models.
+Table 4 compares the performance metrics obtained using CNN, CNN-SE, and SE-LGANet models.
 
 **Table 4.** Summary of performances obtained using CNN, CNN-SE and SE-LGANet models.
 
@@ -280,61 +280,61 @@ Table 4 compared the performance metrics obtained using CNN, CNN-SE, and SE-LGAN
 
 The CNN model exhibited baseline performance with 87.28% accuracy and a 12.72% error rate. The CNN-SE model improved accuracy to 89.75% and reduced the error rate to 10.25% with the addition of SE blocks. The SE-LGANet model showed the highest performance, increasing accuracy to 91.48% and decreased the error rate to 8.52%. The sensitivity of the CNN model is 87.31%, which increased to 89.78% in the CNN-SE model and 91.57% in the SE-LGANet model. Specificity values increased sequentially from 96.82% to 97.44% and 97.87%. Precision and F1 scores reach their highest values in the SE-LGANet model at 91.60% and 91.51%, respectively. The false positive rate decreased from 3.18% in the CNN model to 2.56% in the CNN-SE model and 2.13% in the SE-LGANet model. The CNN-SE and SE-LGANet models offered higher performance and accuracy compared to the baseline CNN model, reducing false positive rates and enhancing overall classification success. These improvements highlighted the significant contribution of attention mechanisms to model performance.
 
-| ![](manuscript_media/image10.png) |
+| ![ROC curves for CNN](../figures/image10.png) |
 | --- |
 | (a) |
-| ![](manuscript_media/image11.png) |
+| ![ROC curves for CNN-SE](../figures/image11.png) |
 | (b) |
-| ![](manuscript_media/image12.png) |
+| ![ROC curves for SE-LGANet](../figures/image12.png) |
 | (c) |
 
-**Figure 6.** ROC curves obtained for various models: (a) CNN; (b) CNN-SE; (c) SE-LGANet
+**Figure 6.** ROC curves obtained for various models: (a) CNN; (b) CNN-SE; (c) SE-LGANet.
 
 Figure 6 shows the ROC curves obtained using various models. The ROC curves for the CNN, CNN-SE, and SE-LGANet models by class, demonstrate their validation performance. The CNN model’s micro-average ROC curve is 0.98, with the Parabasal class standing out with the highest AUC value 1.00. For the CNN-SE model, the micro-average ROC curve is 0.99, with high AUC values across all classes. Notably, the Koilocytotic class shows an improvement, with its AUC value increasing from 0.94 to 0.96. The SE-LGANet model also has a micro-average ROC curve of 0.99, achieved the highest performance across all classes. In this model, the AUC values for the Koilocytotic and Parabasal classes are recorded as 0.97 and 1.00, respectively. Overall, the CNN-SE and SE-LGANet models showed significant improvements in validation performance with steeper ROC curves and higher AUC values. These findings indicate that attention mechanisms and SE blocks are effective in enhancing model accuracy and discriminative power.
 
 Visualizing intermediate layer features from images facilitates understanding of the internal working mechanisms of the model and allows visualization of which features are extracted. In this process, the dataset is first loaded and the images are scaled and fed to the trained model. The features are extracted from a specific intermediate layer. An example from the validation dataset is taken, and intermediate layer features are extracted from this example. The dimensions of the intermediate layer features are printed, and the first 64 channels of these features are visualized in an 8x8 grid. This step is crucial for analyzing how specific layers of the model process the input and what patterns or features they learn.
 
-| ![](manuscript_media/image13.png) |
+| ![Intermediate layer visualizations for CNN](../figures/image13.png) |
 | --- |
 | (a) |
-| ![](manuscript_media/image14.png) |
+| ![Intermediate layer visualizations for CNN-SE](../figures/image14.png) |
 | (b) |
-| ![](manuscript_media/image15.png) |
+| ![Intermediate layer visualizations for SE-LGANet](../figures/image15.png) |
 | (c) |
 
-**Figure 7.** Intermediate layer visualizations of: (a) CNN; (b) CNN-SE; (c) SE-LGANet
+**Figure 7.** Intermediate layer visualizations of: (a) CNN; (b) CNN-SE; (c) SE-LGANet.
 
 Figure 8 illustrates the visual explanations obtained for the three proposed models via Grad-CAM. The results for the base CNN model indicate that the focus areas are indistinct and widespread. In contrast, the CNN-SE model shows concentration on more specific regions with clearer boundaries. The SE-LGANet model, which integrates both local and global attention mechanisms, yields even sharper and more localized focus points during the decision-making process. These findings suggest that incorporating attention mechanisms enables the model to better identify critical regions, thereby enhancing both diagnostic accuracy and interpretability compared to standard CNN.
 
-| ![](manuscript_media/image16.png) |
+| ![Grad-CAM results for CNN](../figures/image16.png) |
 | --- |
 | (a) |
-| ![](manuscript_media/image17.png) |
+| ![Grad-CAM results for CNN-SE](../figures/image17.png) |
 | (b) |
-| ![](manuscript_media/image18.png) |
+| ![Grad-CAM results for SE-LGANet](../figures/image18.png) |
 | (c) |
 
-**Figure 8.** Grad-CAM results obtained using proposed models: (a) CNN; (b) CNN-SE; (c) SE-LGANet
+**Figure 8.** Grad-CAM results obtained using proposed models: (a) CNN; (b) CNN-SE; (c) SE-LGANet.
 
 To validate the robustness of the proposed model, it has been tested on other commonly used publicly available datasets, i.e., the Mendeley LBC and Herlev datasets. To validate the SE-LGANet model, the hold-out approach was utilized with an 8:2 train-test split ratio as in previous experiments. The confusion matrix is given in Figure 9 (a). The SE-LGANet model demonstrated remarkable performance on the Mendeley LBC dataset, achieving an accuracy of 96.88% and a low error rate of 3.12%. High sensitivity (91.70%), and specificity (99.12%) indicate excellent diagnostic capability. The precision of 91.88%, and a low false positive rate (0.88%) underscore the model’s reliability. The F1 score (91.74%) and Matthews Correlation Coefficient (90.78%) further validate the model’s robustness and balanced performance across different classes. The Grad-CAM results in Figure 9 (b) showcase the model’s ability to highlight critical regions within the cervical cell images that influence its predictions. The activation maps (bottom row) indicate that the model effectively focuses on relevant cellular structures, providing visual explanations for its decisions and enhancing the interpretability and trustworthiness of the AI-driven classification.
 
-| ![](manuscript_media/image19.png) |
+| ![Mendeley LBC confusion matrix for SE-LGANet](../figures/image19.png) |
 | --- |
 | (a) |
-| ![](manuscript_media/image20.png) |
+| ![Mendeley LBC Grad-CAM results for SE-LGANet](../figures/image20.png) |
 | (b) |
 
-**Figure 9.** SE-LGANet model evaluation for Mendeley LBC dataset. (a) Confusion matrix (b) Grad-CAM results.
+**Figure 9.** SE-LGANet model evaluation for Mendeley LBC dataset: (a) confusion matrix; (b) Grad-CAM results.
 
-As for Herlev dataset, it was split into 734 training samples and 183 test samples for binary classification.  The corresponding confusion matrix is presented in Figure 10 (a). The SE-LGANet model’s performance on the Herlev dataset shows a high accuracy of 89.62% %. It demonstrates excellent sensitivity (93.43%) and precision (92.75%), indicating reliable detection of positive cases. The Grad-CAM results for the Herlev dataset is shown in Figure 10 (b). These findings reveal that the model effectively identifies and highlights critical regions within the cervical cell images. The activation maps (bottom row) show focused attention on key areas such as the nucleus and cytoplasmic features, indicating that the model’s predictions are based on relevant and significant cellular structures. This enhances the model’s interpretability and supports its diagnostic accuracy.
+As for the Herlev dataset, it was split into 734 training samples and 183 test samples for binary classification. The corresponding confusion matrix is presented in Figure 10 (a). The SE-LGANet model's performance on the Herlev dataset shows a high accuracy of 89.62%. It demonstrates excellent sensitivity (93.43%) and precision (92.75%), indicating reliable detection of positive cases. The Grad-CAM results for the Herlev dataset are shown in Figure 10 (b). These findings reveal that the model effectively identifies and highlights critical regions within the cervical cell images. The activation maps (bottom row) show focused attention on key areas such as the nucleus and cytoplasmic features, indicating that the model's predictions are based on relevant and significant cellular structures. This enhances the model's interpretability and supports its diagnostic accuracy.
 
-| ![](manuscript_media/image21.png) |
+| ![Herlev confusion matrix for SE-LGANet](../figures/image21.png) |
 | --- |
 | (a) |
-| ![](manuscript_media/image22.png) |
+| ![Herlev Grad-CAM results for SE-LGANet](../figures/image22.png) |
 | (b) |
 
-**Figure 10.** SE-LGANet model evaluation for Herlev dataset. (a) Confusion matrix (b) Grad-CAM results.
+**Figure 10.** SE-LGANet model evaluation for Herlev dataset: (a) confusion matrix; (b) Grad-CAM results.
 
 ## 4. Discussion
 
