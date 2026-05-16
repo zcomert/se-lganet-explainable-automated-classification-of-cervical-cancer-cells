@@ -1,0 +1,29 @@
+# Trained model weights and history (kept out of git — see README)
+*.h5
+*.pkl
+*.keras
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Full datasets (only data/samples/ is tracked)
+data/full/
+data/sipakmed/
+data/mendeley_lbc/
+data/herlev/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

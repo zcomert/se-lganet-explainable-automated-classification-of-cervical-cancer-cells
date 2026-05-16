@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or refer to the SE-LGANet model, please cite the accompanying paper."
+title: "SE-LGANet: Explainable automated classification of cervical cancer cells using squeeze-and-excitation blocks and local and global attention mechanisms"
+authors:
+  - family-names: "Alçin"
+    given-names: "Ömer Faruk"
+    affiliation: "Department of Software Engineering, Faculty of Engineering, Inonu University, Malatya, Turkiye"
+    email: omer.alcin@inonu.edu.tr
+  - family-names: "Aslan"
+    given-names: "Muzaffer"
+    affiliation: "Department of Electrical and Electronics Engineering, Faculty of Engineering, Bingol University, Bingol, Turkiye"
+    email: muzafferaslan@bingol.edu.tr
+  - family-names: "Cömert"
+    given-names: "Zafer"
+    affiliation: "Department of Software Engineering, Samsun University, Samsun, Turkiye"
+    email: zcomert@samsun.edu.tr
+year: 2026
+keywords:
+  - cervical cancer
+  - convolutional neural network
+  - squeeze-and-excitation
+  - attention mechanism
+  - explainable AI
+  - Grad-CAM
+license: MIT
+# doi: "10.xxxx/xxxxxx"   # add after publication
